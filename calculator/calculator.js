@@ -41,8 +41,8 @@ function update() {
 // that always has 2 decimal places.
 function calculateMonthlyPayment(values) {
   let P = values.amount
-  let n = values.years
-  let i = values.rate
+  let n = values.years*12
+  let i = values.rate/12
   return +((P*i)/(1-(1+i)**(-n))).toFixed(2)
 }
 
