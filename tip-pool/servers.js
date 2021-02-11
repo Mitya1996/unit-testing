@@ -12,7 +12,7 @@ serverForm.addEventListener('submit', submitServerInfo);
 function submitServerInfo(evt) {
   if (evt) evt.preventDefault(); // when running tests there is no event
 
-  let serverName = serverNameInput.value;
+  let serverName = serverNameInput.value; 
 
   if (serverName !== '') {
     serverId++;
@@ -38,6 +38,8 @@ function updateServerTable() {
 
     appendTd(newTr, curServer.serverName);
     appendTd(newTr, '$' + tipAverage.toFixed(2));
+    appendDeleteBtn(newTr, 'server');
+
 
     serverTbody.append(newTr);
   }
